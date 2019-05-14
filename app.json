@@ -1,0 +1,26 @@
+{
+  "id": "f2c33ce3-a4a3-4d7c-aa61-e9078fbbca90",
+  "name": "DXC Doc. Box Update to Prod. Order Pages",
+  "publisher": "DXC",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "compatibilityId": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 50000,
+    "to": 50149
+  },
+  "showMyCode": true,
+  "breakonerror" : true,
+  "runtime": "1.0"
+}

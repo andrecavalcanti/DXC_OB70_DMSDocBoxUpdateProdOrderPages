@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",            
+            "name": "Your own server",
+            "server": "http://10.2.16.204",                    
+            "serverInstance": "TPM-NAV-DEV",
+            "port"  : 9049,            
+            // "server": "http://172.19.2.40",                    
+            // "serverInstance": "TPM-DEV",            
+            // "port"  : 7059,
+            "authentication": "Windows",
+            //"tenant": "default",
+            //"startupObjectId": 22,
+           "schemaUpdateMode": "Synchronize"
+           //"schemaUpdateMode": "Recreate"
+            //"startupObjectType": "Page",
+            //"breakOnError": true
+        }
+    ]
+}
