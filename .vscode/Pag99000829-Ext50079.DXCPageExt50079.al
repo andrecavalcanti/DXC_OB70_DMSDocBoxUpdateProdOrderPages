@@ -7,7 +7,7 @@ pageextension 50079 "DXCPageExt50079" extends "Firm Planned Prod. Order" //99000
         {
             part(DXCDMSBox;"DMS - Doc. Box FactBox Async")
             {
-                Visible = true;
+                Visible = DocumentBoxVisible;
                 Editable = false;
                 AccessByPermission =  Page "DMS - Doc. Box FactBox Async"=X;
             }
@@ -21,4 +21,34 @@ pageextension 50079 "DXCPageExt50079" extends "Firm Planned Prod. Order" //99000
     
     var
         myInt : Integer;
+         "--- CCDMS Vars. ---" : Integer;
+        DocumentBoxVisible : Boolean;
+
+    trigger OnAfterGetCurrRecord();
+    begin        
+
+        // >> CCDMS
+        UpdateDocumentBox;
+        //<< CCDMS
+       
+    end;
+
+    local procedure "--- CCDMS Fcts. ---"();
+    begin
+    end;
+
+    procedure UpdateDocumentBox();
+    var
+        ChangeLog : Codeunit "Change Log Management";
+        RecRef : RecordRef;
+    begin
+        // >> CCDMS
+        DocumentBoxVisible := ChangeLog.CheckLicensePermission('CCDMS');
+        if DocumentBoxVisible then begin
+          RecRef.GETTABLE(Rec);
+          if CurrPage.DXCDMSBox.PAGE.SetRecordRef(RecRef) then
+            CurrPage.DXCDMSBox.PAGE.UpdateDocumentBox;
+        end;
+        // << CCDMS
+    end;
 }

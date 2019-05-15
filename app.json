@@ -20,6 +20,7 @@
     "from": 50000,
     "to": 50149
   },
+  "target": "Internal",
   "showMyCode": true,
   "breakonerror" : true,
   "runtime": "1.0"
